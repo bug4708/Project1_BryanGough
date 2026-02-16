@@ -22,8 +22,10 @@ class Program() {
         Console.WriteLine("Choose your character:");
         Console.WriteLine("A: Jill Childers - Assassin, daughter of Mafia Capo Will Childers, betrayed");
         Console.WriteLine("                   by her father as he ascended the ranks of the mafia");
+        Console.WriteLine("                  -Special Ablity: Parry Upon low health greatly reduce incoming damage while reflecting the attack. ");
         Console.WriteLine("B: Richy Marsh   - Handy man, husband to the kidnapped Ayame Marsh, searching");
         Console.WriteLine("                   for answers regarding his powers and the disappearance of his wife");
+        Console.WriteLine("                  -Special Abilty: Berserk doubles damage for the current fight.");
         Console.WriteLine();
         //character selection
 
