@@ -32,7 +32,7 @@ namespace TextAdventure1
                 Console.WriteLine("A. Attack.");
                 Console.WriteLine("B. Special Ability.");
                 Console.WriteLine("C. Use item.");
-                string input = Sselection(3);
+                string input = Choices.Number(3);
 
                 if (input.Equals("A"))
                 {
@@ -70,17 +70,6 @@ namespace TextAdventure1
                 return true;
             } else { return false; }
         }
-        public static string Sselection(int optionNum)
-        {
-            string input = "";
-            string options = "ABCD";
-            while (!options.Substring(0, optionNum).Contains(input) || input.Length == 0 || input.Length != 1)
-            {
-                input = Console.ReadLine();
-                input = input.ToUpper().Trim();
-            }
-            return input;
-        }
         internal class Mage : Enemy
         {
             public Mage()
@@ -112,7 +101,7 @@ namespace TextAdventure1
                     Console.WriteLine("A. Attack.");
                     Console.WriteLine("B. Special Ability.");
                     Console.WriteLine("C. Use item.");
-                    string input = Sselection(3);
+                    string input = Choices.Number(3);
 
                     if (input.Equals("A"))
                     {
