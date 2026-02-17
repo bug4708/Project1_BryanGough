@@ -30,7 +30,7 @@ class Program() {
         //character selection
 
         Console.WriteLine("Please input A or B to select character.");
-        string input = Sselection(2);
+        string input = Choices.Number(2);
 
         string charName;
         if (input.Equals("A")) {
@@ -56,14 +56,14 @@ class Program() {
         Console.WriteLine("C. Check Health.");
         Console.WriteLine();
 
-        string choice = Sselection(3);  //reads line choice from above
+        string choice = Choices.Number(3);  //reads line choice from above
         if (choice.Equals("A"))
         {
             //entrance
             Console.WriteLine("Entrances include:");
             Console.WriteLine("A. Front Entrance");
             Console.WriteLine("B. Staff Entrance");
-            string entrance = Sselection(2);
+            string entrance = Choices.Number(2);
             if (entrance.Equals("A"))
             {
                 OutFront(player);
@@ -96,7 +96,7 @@ class Program() {
         Console.WriteLine("B. Explore.");
         //Console.WriteLine("C. Use special character ability."); 
         //stealth elements removed for time sake, but I would like to implement later if we continue to change this project
-        string choice = Sselection(2);
+        string choice = Choices.Number(2);
         if (choice.Equals("A"))
         {
             Console.WriteLine("A guard appears in the doorway, blocking your entrance. He charges right at you!");
@@ -119,7 +119,7 @@ class Program() {
                 Console.WriteLine("Would you like to go another way?");
                 Console.WriteLine("A. Yes, I'd like to go in the front.");
                 Console.WriteLine("B. No, I'd like to stay.");
-                string direction = Sselection(2);
+                string direction = Choices.Number(2);
                 if (direction.Equals("A")) { OutFront(player); }
                 else { OutBack(player); }
             }
@@ -132,7 +132,7 @@ class Program() {
         Console.WriteLine("B. Find a way in that is more quiet.");
         Console.WriteLine("C. Explore.");
         Console.WriteLine();
-        string choice = Sselection(3);
+        string choice = Choices.Number(3);
         if (choice.Equals("A"))
         {
             Console.WriteLine("Every guard that was asleep wakes up, you'll have to fight your way through!");
@@ -174,7 +174,7 @@ class Program() {
             Console.WriteLine("Would you like to go another way?");
             Console.WriteLine("A. Yes, I'd like to go in the front.");
             Console.WriteLine("B. No, I'd like to stay.");
-            string direction = Sselection(2);
+            string direction = Choices.Number(2);
             if (direction.Equals("A")) { OutFront(player); }
             else { OutBack(player); }
         }
@@ -187,7 +187,7 @@ class Program() {
         Console.WriteLine("A. Proceed forward towards the elevator.");
         Console.WriteLine("B. Explore.");
         Console.WriteLine();
-        string choice = Sselection(2);
+        string choice = Choices.Number(2);
         if (choice.Equals("A"))
         {
             Console.WriteLine("There is a crowd of people in front. They don't look very happy to see you.");
@@ -211,7 +211,7 @@ class Program() {
             Console.WriteLine("You see there is a dormitory through another doorway nearby. Would you like to go there?");
             Console.WriteLine("A. Yes, lets go to the dormitories.");
             Console.WriteLine("B. No, I'd like to stay.");
-            string direction = Sselection(2);
+            string direction = Choices.Number(2);
             if (direction.Equals("A")) { Dormitories(player); }
             else { Foyer(player); }
         }
@@ -222,7 +222,7 @@ class Program() {
         Console.WriteLine("You've made your way into the dormitories. Would you like to proceed or look around?");
         Console.WriteLine("A. Proceed to the Foyer.");
         Console.WriteLine("B. Look around.");
-        string choice = Sselection(2);
+        string choice = Choices.Number(2);
         if (choice.Equals("A"))
         {
             if(player.health == player.HEALTH_MAX)
@@ -265,7 +265,7 @@ class Program() {
         Console.WriteLine("The sorcerer becons you to approach...");
         Console.WriteLine("A. Show this arcane bastard why they should have never hurt you.");
         Console.WriteLine("B. Continue Exploring first.");
-        string choice = Sselection(2);
+        string choice = Choices.Number(2);
         if (choice.Equals("A"))
         {
             Console.WriteLine("He laughs heartily.");
@@ -292,7 +292,7 @@ class Program() {
             Console.WriteLine("You can access the Foyer from here, as well as the BOSS's office");
             Console.WriteLine("A. Go to foyer.");
             Console.WriteLine("B. Stay outside the office");
-            string direction = Sselection(2);
+            string direction = Choices.Number(2);
             if (direction.Equals("A")) { Foyer(player); }
             else { Office(player); }
 
@@ -337,7 +337,7 @@ class Program() {
             Console.WriteLine("");
             Console.WriteLine("Play again? A for yes, B for no");
 
-            string direction = Sselection(2);
+            string direction = Choices.Number(2);
             if (direction.Equals("A")) { Main(null); }
             else
             {
@@ -354,19 +354,8 @@ class Program() {
         Console.WriteLine("You have been defeated :(");
         Console.WriteLine("It's okay though! There's always next time!");
         Console.WriteLine("Press A. to retry, press B. to close game");
-        string cont = Sselection(2);
+        string cont = Choices.Number(2);
         if (cont.Equals("A")) { Main(null); }
         else { return; }
-    }
-    public static string Sselection(int optionNum)
-    {
-        string input = "";
-        string options = "ABCD";
-        while (!options.Substring(0,optionNum).Contains(input) || input.Length==0 || input.Length != 1)
-        {
-            input = Console.ReadLine();
-            input = input.ToUpper().Trim();
-        }
-        return input;
     }
 }
