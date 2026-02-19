@@ -25,6 +25,7 @@ namespace TextAdventure1
         }
         public bool Combat(Character player)
         {
+            //Battle Text
             player.strength = player.strength_default;
             while (this.health > 0 && player.health > 0) {
                 Console.WriteLine($"You have {player.health} hp. The enemy has {this.health} hp.");
@@ -47,6 +48,7 @@ namespace TextAdventure1
                     Console.WriteLine(player.charName + " used their " + player.inventory[0]);
                     if (player.charName.Equals("Jill"))
                     {
+                        //Jill parry text
                         player.strength /= 2;
                         player.strength *= 5;
                         this.strength /= 2;
@@ -56,6 +58,7 @@ namespace TextAdventure1
                     }
                     else
                     {
+                        //Ricky burger text
                         if (player.health <= 100) {
                             player.health = player.HEALTH_MAX;
                             Console.WriteLine("Ricky takes a bite of his awesome medium well burger.");
@@ -100,6 +103,7 @@ namespace TextAdventure1
             }
             public bool Combat(Character player)
             {
+                //Apollo's Leaf text
                 if(player.inventory.Count > 2){
                     Console.WriteLine("You remember you have the Apollo's Leaf!");
                     Console.WriteLine($"{player.charName}: \"Take this!\"");
