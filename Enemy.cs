@@ -50,8 +50,8 @@ namespace TextAdventure1
                         player.strength /= 2;
                         player.strength *= 5;
                         this.strength /= 2;
-                        Console.WriteLine("Jill brandishes her katana, scaring the opponent!");
-                        Console.WriteLine("Jill's strength increased massively! (twice as much, actually)");
+                        Console.WriteLine("Jill parries the enemy's strike!");
+                        Console.WriteLine("The enemy is staggered and takes double damage!");
                         player.DisplayStrength();
                     }
                     else
