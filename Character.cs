@@ -10,12 +10,14 @@ namespace TextAdventure1
     internal class Character
     {
         public string charName;
-        public int HEALTH_MAX;
         public int health;
+        public int HEALTH_MAX;
         public int strength_default;
         public int strength;
         public int energy;
         public List<string> inventory = new List<string> (0);
+        const int JILL_HEALTH_MAX = 100;
+        const int RICKY_HEALTH_MAX = 110;
 
         public Character(string charName) { 
             this.charName = charName;
@@ -23,21 +25,21 @@ namespace TextAdventure1
             if(this.charName == "Jill")
             {
                 inventory.Add("Katana");
-                this.health = 100; //start w 100 hp
-                this.HEALTH_MAX = 100;
+                this.health = JILL_HEALTH_MAX; //start w 100 hp
+                this.HEALTH_MAX = JILL_HEALTH_MAX;
                 this.strength_default = 5;
                 this.strength = 5;
             } else
             {
                 inventory.Add("Burger");
-                this.health = 110; //start w 50 hp
-                this.HEALTH_MAX = 110;
+                this.health = RICKY_HEALTH_MAX; //start w 50 hp
+                this.HEALTH_MAX = RICKY_HEALTH_MAX;
                 this.strength_default = 20;
                 this.strength = 20;
                 this.energy = 2;
             }
         }
-        public void CombatSpecial(Enemy enemy)
+        public void CombatSpecial(Enemy enemy)  //defines character specials, each with their own charges
         {
             if (charName.Equals("Jill"))
             {
@@ -61,14 +63,15 @@ namespace TextAdventure1
                 }
             }
         }
-        public void DisplayStrength()
+        public void DisplayStrength()//prints strength
         {
             Console.WriteLine(charName + " will do " + this.strength + " damage in combat");
         }
-        public void DisplayHealth() {
+        public void DisplayHealth() //prints health
+        {
             Console.WriteLine(charName + " has " + this.health + " hp remaining!");
         }
-        public void DisplayInventory()
+        public void DisplayInventory()  //prints inventory
         {
             Console.WriteLine("Inventory Contains:");
 
@@ -79,7 +82,7 @@ namespace TextAdventure1
             Console.WriteLine();
         }
 
-        public void BackStory()
+        public void BackStory() //self explanatory, displays motivation of the character
         {
             if(this.charName == "Jill")
             {

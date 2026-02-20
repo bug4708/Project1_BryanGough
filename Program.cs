@@ -11,6 +11,9 @@ using TextAdventure1;
  */
 
 class Program() {
+    //might add a function for exploration that shows available rooms and special dialogue for each
+    //the rooms are already functions, it may be easier to just make the connecting rooms more
+    //modular and editable
     static void Main(string[] args)
     {
         //backstory
@@ -225,7 +228,9 @@ class Program() {
         string choice = Choices.Number(2);
         if (choice.Equals("A"))
         {
-            if(player.health == player.HEALTH_MAX)
+            if(player.health == player.HEALTH_MAX)  
+                //checks to see if the player encounterred an enemy already, might
+                //find a more reliable way to check this
             {
                 Console.WriteLine("The Guards didn't hear you! proceeding to Foyer.");
                 Foyer(player);
@@ -298,7 +303,7 @@ class Program() {
 
         }
     }
-    public static void Boss(Character player)
+    public static void Boss(Character player) //final boss finale, dialogue changes based on character
     {
         if (player.charName.Equals("Jill"))
         {
@@ -338,7 +343,7 @@ class Program() {
             Console.WriteLine("Play again? A for yes, B for no");
 
             string direction = Choices.Number(2);
-            if (direction.Equals("A")) { Main(null); }
+            if (direction.Equals("A")) { Main(new string[0]); }
             else
             {
                 Console.WriteLine("Thank you for playing!!!");
@@ -349,13 +354,13 @@ class Program() {
             Defeat();
         }
     }
-    public static void Defeat()
+    public static void Defeat() //allows player to retry or quit after defeat
     {
         Console.WriteLine("You have been defeated :(");
         Console.WriteLine("It's okay though! There's always next time!");
         Console.WriteLine("Press A. to retry, press B. to close game");
         string cont = Choices.Number(2);
-        if (cont.Equals("A")) { Main(null); }
+        if (cont.Equals("A")) { Main(new string[0]); }
         else { return; }
     }
 }
