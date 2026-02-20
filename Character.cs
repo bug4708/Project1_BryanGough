@@ -30,8 +30,8 @@ namespace TextAdventure1
             } else
             {
                 inventory.Add("Burger");
-                this.health = 60; //start w 50 hp
-                this.HEALTH_MAX = 60;
+                this.health = 110; //start w 50 hp
+                this.HEALTH_MAX = 110;
                 this.strength_default = 20;
                 this.strength = 20;
                 this.energy = 2;
