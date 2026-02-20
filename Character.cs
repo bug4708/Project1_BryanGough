@@ -43,6 +43,8 @@ namespace TextAdventure1
             {
                 Console.WriteLine("Jill is trying to parry!");
                 if (this.health <= enemy.strength) {
+                    Console.WriteLine("Jill parries the enemy's strike!");
+                    Console.WriteLine("The enemy is staggered and takes double damage!");
                     this.health -= 2;
                     enemy.health -= enemy.strength;
                 }
