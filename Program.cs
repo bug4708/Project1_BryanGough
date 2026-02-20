@@ -155,7 +155,7 @@ class Program() {
         }
         if (choice.Equals("B")) {
             Console.WriteLine("You try to pick the Lock");
-            if (player.charName.Equals("Jill") && player.health == player.HEALTH_MAX)
+            if (player.charName.Equals("Jill") && player.health == player.HEALTH_MAX)   //checks if health is maxxed as a replacement for detection
             {
                 Console.WriteLine("Success! You enter the dorms undetected.");
                 Dormitories(player);
@@ -209,8 +209,15 @@ class Program() {
             }
         }
         if (choice.Equals("B")) {
-            Console.WriteLine("You find a health pack! + 50% hp :o");
-            player.health += player.HEALTH_MAX * 1 / 2;
+            bool hasHealthPack = false;
+            if (hasHealthPack == false)  //might find a better way to do this, but this is just to make sure the player can only get the health pack once
+            { 
+                Console.WriteLine("You find a health pack! + 50% hp :o");
+                player.health += player.HEALTH_MAX * 1 / 2;
+                hasHealthPack = true;
+                //task for later: add to inventory and implement combat items better, as well as inventory overhaul
+
+            }
             Console.WriteLine("You see there is a dormitory through another doorway nearby. Would you like to go there?");
             Console.WriteLine("A. Yes, lets go to the dormitories.");
             Console.WriteLine("B. No, I'd like to stay.");
