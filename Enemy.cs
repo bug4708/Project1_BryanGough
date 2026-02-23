@@ -63,7 +63,7 @@ namespace TextAdventure1
                     else
                     {
                         //Ricky burger text
-                        if (player.health <= 100) {
+                        if (player.health <= 110) {
                             player.health = player.HEALTH_MAX;
                             Console.WriteLine("Ricky takes a bite of his awesome medium well burger.");
                             Console.WriteLine("Ricky is feeling better than ever! (with overheal)");
