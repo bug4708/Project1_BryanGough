@@ -82,8 +82,8 @@ namespace TextAdventure1
         {
             public Mage()
             {
-                this.HEALTH_MAX = 50;
-                this.health = 50;
+                this.HEALTH_MAX = 65;
+                this.health = 65;
                 this.strength = 30;
             }
         }
@@ -91,8 +91,8 @@ namespace TextAdventure1
         {
             public Boss()
             {
-                this.HEALTH_MAX = 100;
-                this.health = 100;
+                this.HEALTH_MAX = 125;
+                this.health = 125;
                 this.strength = 25;
             }
             new public bool Combat(Character player)    //new hides the old combat method, allows for different combat mechanics for the boss
