@@ -286,7 +286,7 @@ class Program() {
             Console.WriteLine("It details the affairs of the Don, but one thing doesn't seem right...");
             Console.WriteLine("The Don has a weakness! He is allergic to 'Apollo's Leaf', a rare herb.");
             player.inventory.Add("Memoir");
-            Dormitories(player);
+            Dormitories(player);        //move to dorms
         }
     }
     public static void Office(Character player)

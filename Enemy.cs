@@ -148,6 +148,12 @@ namespace TextAdventure1
                             player.health -= this.strength;
                         }
                     }
+                    if (player.health < player.HEALTH_MAX /2)
+                    {
+                        Console.WriteLine($"{0} is getting weak!",player.charName);
+                        // The ai generated the line below and it was too good to delete
+                        //Console.WriteLine("The Don is getting desperate! He uses his secret weapon, the Tommy Gun!");
+                    }
                 }
                 if (this.health <= 0)
                 {
