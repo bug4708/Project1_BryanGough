@@ -95,6 +95,15 @@ namespace TextAdventure1
                 this.health = 125;
                 this.strength = 25;
             }
+            internal class Boss2 : Enemy //differnt version of the final boss
+            {
+                public Boss2()
+                {
+                    this.HEALTH_MAX = 75;
+                    this.health = 75;
+                    this.strength = 15;
+                }
+            }
             new public bool Combat(Character player)    //new hides the old combat method, allows for different combat mechanics for the boss
             {
                 //Apollo's Leaf text

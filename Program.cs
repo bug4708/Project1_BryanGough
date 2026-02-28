@@ -86,7 +86,7 @@ class Program() {
             player.DisplayHealth();
             Console.WriteLine("(Press enter to continue)");
             Console.ReadLine();
-            
+
             Beginning(player);
         }
     }
@@ -110,8 +110,8 @@ class Program() {
             if (choice.Equals("A"))
             {
 
-                Enemy guard1 = new Enemy(10, 10);                                      //made by dylan cunningham here
-                bool result = guard1.Combat(player);
+                Enemy Herman = new Enemy(10, 10);                                      //made by dylan cunningham here
+                bool result = Herman.Combat(player);
                 if (result == true)
                 {
                     Console.WriteLine("Herman defeated!");
@@ -133,7 +133,21 @@ class Program() {
                 Console.WriteLine("Here take this, I have no use for this anymore.");
                 Console.WriteLine("You obtained a healthpack +50 health (Congrats your a good person).");
                 player.health += player.HEALTH_MAX * 1 / 2;
-                Foyer(player);
+                public static void Office2(Character player) {
+        Office2(player);
+        {
+    if (player.charName.Equals = "Jill")
+            {
+                Console.WriteLine("The Don wakes up in a panic with Jill's katana to his throat.");
+                Console.WriteLine("J Jill when did you gte back.");
+                Console,WriteLine("A. Fight the Don.");
+                Console.WriteLine("B. Talk to your father.");
+                string choice2 = Choices.Number.(2);
+                if (choice2.Equals("A")) {
+                    Enemy Don = new Enemy.Boss2(75,15);
+                {
+                    
+                }
             }
         }
         if (choice.Equals("B"))
