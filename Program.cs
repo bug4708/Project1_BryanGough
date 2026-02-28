@@ -116,6 +116,7 @@ class Program() {
                 {
                     Console.WriteLine("Herman defeated!");
                     Console.WriteLine("You monster, this guilt will haunt you...");
+                    player.guilt += 1;
                     player.health -= player.HEALTH_MAX * 1 / 2;
                     Console.WriteLine("Moving on to the Foyer...");
                     Foyer(player);
