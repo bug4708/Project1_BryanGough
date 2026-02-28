@@ -102,18 +102,38 @@ class Program() {
         string choice = Choices.Number(2);
         if (choice.Equals("A"))
         {
-            Console.WriteLine("A guard appears in the doorway, blocking your entrance. He charges right at you!");
-            Enemy guard = new Enemy();
-            bool result = guard.Combat(player);
-            if (result == true)
+            Console.WriteLine("A new hire named Herman whimpishly looks at you.");
+            Console.WriteLine("P p please don't hurt me, I've done nothing wrong!");
+            Console.WriteLine("A. Fight Herman");
+            Console.WriteLine("B. Spare Herman");
+            string choice1 = Choices.Number(2);
+            if (choice.Equals("A"))
             {
-                Console.WriteLine("Guard defeated!");
-                Console.WriteLine("Moving on to the Foyer...");
-                Foyer(player);
+
+                Enemy guard1 = new Enemy(10, 10);                                      //made by dylan cunningham here
+                bool result = guard1.Combat(player);
+                if (result == true)
+                {
+                    Console.WriteLine("Herman defeated!");
+                    Console.WriteLine("You monster, this guilt will haunt you...");
+                    player.health -= player.HEALTH_MAX * 1 / 2;
+                    Console.WriteLine("Moving on to the Foyer...");
+                    Foyer(player);
+                }
+                else
+                {
+                    Defeat();
+
+                }
             }
             else
             {
-                Defeat();
+                Console.WriteLine("T thank you");
+                Console.WriteLine("You're such a kind soul!");
+                Console.WriteLine("Here take this, I have no use for this anymore.");
+                Console.WriteLine("You obtained a healthpack +50 health (Congrats your a good person).");
+                player.health += player.HEALTH_MAX * 1 / 2;
+                Foyer(player);
             }
         }
         if (choice.Equals("B"))
@@ -266,7 +286,7 @@ class Program() {
             Console.WriteLine("It details the affairs of the Don, but one thing doesn't seem right...");
             Console.WriteLine("The Don has a weakness! He is allergic to 'Apollo's Leaf', a rare herb.");
             player.inventory.Add("Memoir");
-            Dormitories(player);
+            Dormitories(player);        //move to dorms
         }
     }
     public static void Office(Character player)
