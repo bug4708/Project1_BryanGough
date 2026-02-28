@@ -98,7 +98,7 @@ namespace TextAdventure1
             new public bool Combat(Character player)    //new hides the old combat method, allows for different combat mechanics for the boss
             {
                 //Apollo's Leaf text
-                if(player.inventory.Count > 2){ //just checks inventory size because you need to get items in order atm
+                if(player.inventory.Contains ("Apollo's Leaf")){ //just checks inventory size because you need to get items in order atm
                     Console.WriteLine("You remember you have the Apollo's Leaf!");
                     Console.WriteLine($"{player.charName}: \"Take this!\"");
                     this.health /= 2;
