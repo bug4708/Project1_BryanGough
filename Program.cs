@@ -353,10 +353,12 @@ class Program() {
             Console.WriteLine("     : \"Show me where my wife is and I'll let you live.\"");
             Console.WriteLine("  Don: \"How quaint. With everything else I have to deal with, I'll allow you a quick death.\"");
         }
+
         Enemy don = new Enemy.Boss();
         if (player.guilt > 0)
         {
             don.strength += 5;
+            Console.WriteLine("Wow, your more immoral than me and I'm literally the don");
         }
             
             
