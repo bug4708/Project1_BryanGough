@@ -132,6 +132,8 @@ class Program() {
                 Console.WriteLine("You're such a kind soul!");
                 Console.WriteLine("Here take this, I have no use for this anymore.");
                 Console.WriteLine("You obtained a healthpack +50 health (Congrats your a good person).");
+                Console.WriteLine("Here take my hat it's more useful to you then me now anyways");
+                player.inventory.Add("Herman's Hat");
                 player.health += player.HEALTH_MAX * 1 / 2;
                 player.guilt -= 3;
                 Foyer(player);
@@ -305,6 +307,10 @@ class Program() {
             Console.WriteLine("He laughs heartily.");
             Console.WriteLine("\"This will be fun\", he utters with a grin.");
             Enemy wizard = new Enemy.Mage();
+            if (player.inventory.Contains("Herman's Hat")) {
+                Console.WriteLine("Herman's kindness reminds you why you are doing this");
+                player.strength += 10;
+            }
             bool result = wizard.Combat(player);
             if (result == true)
             {
@@ -321,7 +327,7 @@ class Program() {
         }
         if (choice.Equals("B"))
         {
-            if (player.inventory.Count > 1) {
+            if (player.inventory.Contains("Memoir")) {
                 Console.WriteLine($"Remembering the memoir they found earlier, {player.charName} finds the Apollo's Leaf in the safe");
                 Console.WriteLine();
             }
