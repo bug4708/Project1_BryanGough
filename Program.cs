@@ -116,7 +116,7 @@ class Program() {
                 {
                     Console.WriteLine("Herman defeated!");
                     Console.WriteLine("You monster, this guilt will haunt you...");
-                    player.health -= player.HEALTH_MAX * 1 / 2;
+                    player.guilt += 3;      
                     Console.WriteLine("Moving on to the Foyer...");
                     Foyer(player);
                 }
@@ -133,6 +133,7 @@ class Program() {
                 Console.WriteLine("Here take this, I have no use for this anymore.");
                 Console.WriteLine("You obtained a healthpack +50 health (Congrats your a good person).");
                 player.health += player.HEALTH_MAX * 1 / 2;
+                player.guilt -= 3;
                 Foyer(player);
             }
         }
@@ -183,6 +184,7 @@ class Program() {
             else if (player.charName.Equals("Ricky"))
             {
                 Console.WriteLine("Do you think Ricky knows how to pick a lock...");
+                player.guilt += 1;
                 OutBack(player);
             }
             else
@@ -309,6 +311,8 @@ class Program() {
                 Console.WriteLine("The wizard is no more. He crumples to the floor");
                 Console.WriteLine("Now time for the Don himself");
                 Boss(player);
+
+                player.guilt -= 1;
             }
             else
             {
@@ -349,9 +353,18 @@ class Program() {
             Console.WriteLine("     : \"Show me where my wife is and I'll let you live.\"");
             Console.WriteLine("  Don: \"How quaint. With everything else I have to deal with, I'll allow you a quick death.\"");
         }
+
         Enemy don = new Enemy.Boss();
+        if (player.guilt > 0)
+        {
+            don.strength += 5;
+            Console.WriteLine("Wow, your more immoral than me and I'm literally the don");
+        }
+            
+            
         bool result = don.Combat(player);
         if (result == true)
+          
         {
             Console.WriteLine("The Don is defeated");
             if (player.charName.Equals("Jill"))
@@ -359,16 +372,18 @@ class Program() {
                 Console.WriteLine("Over the body of her dead father, Jill finally takes her seat as the new Don of the Childers Mafia");
                 Console.WriteLine("That evil man will never be able to hurt anyone ever again. She will be able to lead the organization");
                 Console.WriteLine("to be something greater and kinder.");
+                player.guilt = 0;
             }
             else
             {
                 Console.WriteLine("You rescue your wife from her bonds, and finally escape from the clutches of the Mob");
                 Console.WriteLine("Although you still have little information about your powers, this adventure has taught you a lot");
                 Console.WriteLine("about who you are, and how to use them");
+                player.guilt = 0;
             }
             Console.WriteLine("");
             Console.WriteLine("Play again? A for yes, B for no");
-
+            player.guilt = 0;
             string direction = Choices.Number(2);
             if (direction.Equals("A")) { Main(new string[0]); }
             else

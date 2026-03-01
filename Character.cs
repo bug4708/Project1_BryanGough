@@ -19,6 +19,8 @@ namespace TextAdventure1
         const int JILL_HEALTH_MAX = 100;
         const int RICKY_HEALTH_MAX = 110;
 
+        public int guilt = 0; //Bryan made the guilt mechanic Dylan built off of it.
+
         public Character(string charName) { 
             this.charName = charName;
 
