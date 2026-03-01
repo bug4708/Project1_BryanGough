@@ -107,7 +107,7 @@ class Program() {
             Console.WriteLine("A. Fight Herman");
             Console.WriteLine("B. Spare Herman");
             string choice1 = Choices.Number(2);
-            if (choice.Equals("A"))
+            if (choice1.Equals("A"))
             {
 
                 Enemy guard1 = new Enemy(10, 10);                                      //made by dylan cunningham here
